@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to my page</title>
+    <html ng-app="app"/>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -10,33 +11,67 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="script.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+
 
 </head>
 <body>
-<div class="container">
+<header>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">My Website</a>
+                <a class="navbar-brand headd" href="#">Dogacan's Website</a>
             </div>
-            <ul class="nav navbar-nav">
-                <li ><a href="Views/home.html">Home</a></li>
-                <li role="separator" class="divider"></li>
-                <li ><a href="Views/about.html">About</a></li>
-                <li role="separator" class="divider"></li>
-                <li ><a href="Views/contacts.html">Contact</a></li>
-                <li role="separator" class="divider"></li>
-                <li ><a href="SimpleProject/index.html">Project</a></li>
+            <ul class="nav navbar-nav navbar-left">
+                <a href="SimpleProject/index.html">
+                    <img class="imgg" src="Images/025Pikachu_OS_anime_11.png">
+                </a>
+                <a href="SimpleProject/index.html">
+                    <img class="imgg" src="Images/004Charmander_Dream.png" >
+
+                </a>
+                <a href="SimpleProject/index.html">
+
+                    <img class="imgg" src="Images/007Squirtle_Pokemon_Mystery_Dungeon_Explorers_of_Sky.png">
+                </a>
+
+
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="nav_link"><a href="#home"><i class="fa fa-home"></i>Home</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="nav_link"><a href="#about">About</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="nav_link"><a href="#contacts">Contact</a></li>
+                <li role="separator" class="divider"></li>
+
+            </ul>
+            <br/>
+
         </div>
+
     </nav>
 
+
+
+
+</header>
+<div id="main">
+
+    <!-- angular templating -->
+    <!-- this is where content will be injected -->
+
+    <div ng-view></div>
 </div>
 
 
-
 <div class="footer">
-    <
+
 </div>
 </body>
 </html>

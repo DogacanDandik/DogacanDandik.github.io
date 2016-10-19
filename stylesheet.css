@@ -1,0 +1,15 @@
+.imgg{
+    color: grey;
+    width:75px;
+    height:60px;
+}
+.headd{
+    font-family:"Helvetica Neue";
+    font-size: x-large;
+    font-style: normal;
+}
+.nav_link{
+    font-family:"Helvetica Neue";
+    font-size: x-large;
+    font-style: italic;
+}
