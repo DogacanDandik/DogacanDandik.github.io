@@ -1,21 +1,29 @@
-/**
- * Created by dogacandandik on 10/25/16.
- */
+
 $(document).ready(function() {
     $('#reset').on('click',function () {
+
         $.get('25-31.csv', function(data) {
 
 
+
+// start the table
 
             var html = "<table class='table table-striped' >";
 
 
 
+// split into lines
+
             var rows = data.split("\n");
 
 
+// parse lines
+
             rows.forEach( function getvalues(ourrow) {
 
+
+
+// split line into columns
 
                 var columns = ourrow.split(",");
                 if(columns[0] === "Kod"){
@@ -39,6 +47,8 @@ $(document).ready(function() {
 
                     html += "<th>" + columns[8] + "</th>";
 
+                    html += "<th>" + columns[9] + "</th>";
+
                     html += "<th> Link </th>";
 
                     html += "</thead>";
@@ -61,40 +71,45 @@ $(document).ready(function() {
                     if(columns[0] === "144")
                         html += "<tr><td class='date'>31.10.2016 Monday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
 
-                    html += "<tr id='tbl_tr'>";
+                    html += "<tr>";
+                    //alert(columns[9]);
 
+                    if(columns[1] === "F") {
 
-                    html += "<td>" + columns[0] + "</td>";
+                        html += "<td>" + columns[0] + "</td>";
 
-                    html += "<td>" + columns[1] + "</td>";
+                        html += "<td>" + columns[1] + "</td>";
 
-                    html += "<td>" + columns[2] + "</td>";
+                        html += "<td>" + columns[2] + "</td>";
 
-                    html += "<td>" + columns[3] + "</td>";
+                        html += "<td>" + columns[3] + "</td>";
 
-                    html += "<td>" + columns[4].trim() + "</td>";
+                        html += "<td>" + columns[4] + "</td>";
 
-                    html += "<td>" + columns[5].trim() + "</td>";
+                        html += "<td>" + columns[5].trim() + "</td>";
 
-                    html += "<td>" + columns[6].trim() + "</td>";
+                        html += "<td>" + columns[6].trim() + "</td>";
 
-                    html += "<td>" + columns[7].trim() + "</td>";
+                        html += "<td>" + columns[7].trim() + "</td>";
 
-                    html += "<td>" + columns[8].trim() + "</td>";
-                    var path = "http://istatistik.nesine.com/HeadToHead/Index.aspx?matchCode=" + columns[0];
+                        html += "<td>" + columns[8].trim() + "</td>";
 
+                        html += "<td>" + columns[9].trim() + "</td>";
 
-                    html += '<td>';
-                    html += '<a href="' + path + '">Check Teams</a>';
-                    html += '</td>';
+                        var path = "http://istatistik.nesine.com/HeadToHead/Index.aspx?matchCode=" + columns[0];
+
+                        html += '<td>';
+                        html += '<a href="' + path + '">Check Teams</a>';
+                        html += '</td>';
+
+                    }
                 }
-
-
+// close row
 
                 html += "</tr>";
 
 
-            })
+            });
 
 // close table
 
@@ -108,10 +123,14 @@ $(document).ready(function() {
             $('#alt_min').val('');
             $('#alt_max').val('');
             $('#home_min').val('');
-
-
+            $('#home_max').val('');
         });
+
+
+
+
+
+
+
     });
-
-
 });

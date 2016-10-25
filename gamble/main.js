@@ -1,6 +1,4 @@
-/**
- * Created by dogacandandik on 10/21/16.
- */
+
 $.get('25-31.csv', function(data) {
 
 
@@ -46,6 +44,8 @@ $.get('25-31.csv', function(data) {
 
             html += "<th>" + columns[8] + "</th>";
 
+            html += "<th>" + columns[9] + "</th>";
+
             html += "<th> Link </th>";
 
             html += "</thead>";
@@ -68,41 +68,45 @@ $.get('25-31.csv', function(data) {
             if(columns[0] === "144")
                 html += "<tr><td class='date'>31.10.2016 Monday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
 
-            html += "<tr id='tbl_tr'>";
+                html += "<tr>";
 
 
-            html += "<td>" + columns[0] + "</td>";
+                if(columns[1] === "F") {
 
-            html += "<td>" + columns[1] + "</td>";
+                html += "<td>" + columns[0] + "</td>";
 
-            html += "<td>" + columns[2] + "</td>";
+                html += "<td>" + columns[1] + "</td>";
 
-            html += "<td>" + columns[3] + "</td>";
+                html += "<td>" + columns[2] + "</td>";
 
-            html += "<td>" + columns[4].trim() + "</td>";
+                html += "<td>" + columns[3] + "</td>";
 
-            html += "<td>" + columns[5].trim() + "</td>";
+                html += "<td>" + columns[4] + "</td>";
 
-            html += "<td>" + columns[6].trim() + "</td>";
+                html += "<td>" + columns[5].trim() + "</td>";
 
-            html += "<td>" + columns[7].trim() + "</td>";
+                html += "<td>" + columns[6].trim() + "</td>";
 
-            html += "<td>" + columns[8].trim() + "</td>";
-            var path = "http://istatistik.nesine.com/HeadToHead/Index.aspx?matchCode=" + columns[0];
+                html += "<td>" + columns[7].trim() + "</td>";
 
+                html += "<td>" + columns[8].trim() + "</td>";
 
-            html += '<td>';
-            html += '<a href="' + path + '">Check Teams</a>';
-            html += '</td>';
+                html += "<td>" + columns[9].trim() + "</td>";
 
+                var path = "http://istatistik.nesine.com/HeadToHead/Index.aspx?matchCode=" + columns[0];
 
+                html += '<td>';
+                html += '<a href="' + path + '">Check Teams</a>';
+                html += '</td>';
+
+            }
         }
 // close row
 
             html += "</tr>";
 
 
-    })
+    });
 
 // close table
 
