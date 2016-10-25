@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>Result Page</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -12,49 +12,56 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+
     <link rel="stylesheet" href="main.css">
-    <script src="filter.js"></script>
-    <script src="reset.js"></script>
+
+    <script src="resultJS.js"></script>
+    <script src="filterResult.js"></script>
+
     <!-- Latest compiled and minified CSS -->
 
-    </head>
+</head>
 <body>
 
 
 <div id="container" class="col-md-10"></div>
 
 <div id="container_form" class="col-md-2">
-    <form id="myform">
-    <div class="form-group">
-        <div class="row">
-            <label >Alt 2.5</label>
+    <form >
+        <div class="form-group">
+            <div class="row">
+                <label >Alt 2.5</label>
+            </div>
+            <div class="row">
+                <input type="text" class="form-control" id="alt_min" placeholder="min" >
+                <input type="text" class="form-control" id="alt_max" placeholder="max">
+            </div>
         </div>
         <div class="row">
-            <input type="text" class="form-control" id="alt_min" placeholder="min" >
-            <input type="text" class="form-control" id="alt_max" placeholder="max">
+            <label>1 min </label>
         </div>
-    </div>
-    <div class="row">
-        <label>1 min </label>
-    </div>
-    <div class="row">
-        <input  type="text" class="form-control" id="home_min" placeholder="min">
-        <input  type="text" class="form-control" id="home_max" placeholder="max">
-    </div>
-    <div class="row">
-    <input class="btn btn-success" id="filter" type="button" value="filter"/>
-    <input class="btn btn-primary" id="reset" type="button" value="reset"/>
-    </div>
-    <div class="row">
-        <label class="help-block">Please fill both min and max for accurate results</label>
-    </div>
+        <div class="row">
+            <input  type="text" class="form-control" id="home_min" placeholder="min">
+            <input  type="text" class="form-control" id="home_max" placeholder="max">
+        </div>
+        <div class="row">
+            <input class="btn btn-success" id="filter" type="button" value="filter"/>
+            <input class="btn btn-primary" id="reset" type="button" value="reset"/>
+        </div>
+        <div class="row">
+            <label class="help-block">Please fill both min and max for accurate results</label>
+        </div>
         <div class="row">
             <a href="Results/results.html">Hey!</a>
         </div>
-
-        </form>
-
+    </form>
+    <form>
+        <div class="row">
+            Mac sayisi: <p id="p1"></p>
+            Beraberlik sayisi: <p id="p2"></p>
+            Yuzde oran: <p id="p3"></p>
+        </div>
+    </form>
 </div>
 </body>
 </html>

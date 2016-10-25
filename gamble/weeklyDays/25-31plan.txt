@@ -6,3 +6,5 @@
 30/10/2016 pazar-> 130
 31/10/2016 pazartesi-> 144
 
+Toplam maç sayısı, toplam beraberlik sayısı, bu kriterdeki maclardaki beraberlik sayisi, bu kriterdeki maç sayısı,
+Bu kriterdeki maçların berabere bitenlerinin  toplam maç sayısına ve bu kriterdeki maç sayısına oranı yüzde olarak
