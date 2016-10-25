@@ -68,7 +68,7 @@ $.get('25-31.csv', function(data) {
             if(columns[0] === "144")
                 html += "<tr><td class='date'>31.10.2016 Monday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
 
-            html += "<tr>";
+            html += "<tr id='tbl_tr'>";
 
 
             html += "<td>" + columns[0] + "</td>";
@@ -112,11 +112,9 @@ $.get('25-31.csv', function(data) {
 
 // insert into div
 
-    $('#container').append(html);
+    $('#container').empty().append(html);
 
 
 });
 
-function doda(path){
-    window.location = path;
-}
+
