@@ -57,8 +57,7 @@ $(document).ready(function() {
                         html += "<tr><td class='date'>30.10.2016 Sunday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
                     if(columns[0] === "144")
                         html += "<tr><td class='date'>31.10.2016 Monday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
-                    if($('#alt_min').val() == "");
-                        alert($('#alt_max').val().type);
+
                     if(columns[7] >= $('#alt_min').val() && columns[7] <= $('#alt_max').val() && columns[4] >= $('#home_min').val()) {
                         html += "<tr id='tbl_tr'>";
 
