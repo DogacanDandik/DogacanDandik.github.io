@@ -14,8 +14,13 @@ $(document).ready(function () {
     $("#btn").click(function () {
         counter++;
         $("#lbl").html(counter);
-        if(counter === 10){
-            $("#lbl2").html("Congrats you applied for 10 jobs today");
+        if(counter === 20){
+            $("#lbl2").html("Congrats you applied for 20 jobs today");
+        }
+        if(counter === 30){
+            $("#lbl2").css('color','green');
+            $("#lbl2").html("Congrats you applied for 30 jobs today! Wow this is great!");
+
         }
     })
     
