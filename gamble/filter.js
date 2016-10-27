@@ -68,8 +68,8 @@ $(document).ready(function() {
                     if (alt_max.length === 0 )alt_max = 10;
                     if (home_min.length === 0)home_min = 0.1;
                     if (home_max.length === 0)home_max = 10;
-                    if (columns[5] >= home_min && columns[5] <= home_max || columns[5].length ===0) {
-                        if (columns[8] >= alt_min && columns[8] <= alt_max || columns[8].length ===0) {
+                    if (columns[5] >= home_min && columns[5] <= home_max || columns[5].length === 0) {
+                        if (columns[8] >= alt_min && columns[8] <= alt_max || columns[8].length === 0) {
                             html += "<tr>";
 
                             if (columns[1] === "F") {
