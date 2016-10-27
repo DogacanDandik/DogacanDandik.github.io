@@ -16,12 +16,20 @@
     <link rel="stylesheet" href="main.css">
     <script src="filter.js"></script>
     <script src="reset.js"></script>
+    <script src="28-31.js"></script>
+    <script src="realFilter.js"></script>
     <!-- Latest compiled and minified CSS -->
 
     </head>
 <body>
 
-
+<div class="navigator col-md-10">
+    <p id="p1" class="col-sm-5">Please select the date range to see the matches..   </p>
+    <p class="col-sm-1"></p>
+    <input class="btn btn-info col-sm-2" id="sun" type="button" value="25-31"/>
+    <p class="col-sm-1"></p>
+    <input class="btn btn-info col-sm-2" id="thu" type="button" value="28-31"/>
+</div>
 <div id="container" class="col-md-10"></div>
 
 <div id="container_form" class="col-md-2">
@@ -45,6 +53,8 @@
     <div class="row">
     <input class="btn btn-success" id="filter" type="button" value="filter"/>
     <input class="btn btn-primary" id="reset" type="button" value="reset"/>
+        <input class="btn btn-success" id="filterReal" type="button" value="filterReal"/>
+
     </div>
     <div class="row">
         <label class="help-block">Please fill both min and max for accurate results</label>

@@ -4,3 +4,11 @@
     font-weight: bold;
 
 }
+#p1{
+    text-align: left;
+    text-blink: true;
+
+    font-weight: 600;
+    font-family: "Helvetica Neue";
+
+}
