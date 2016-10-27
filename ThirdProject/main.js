@@ -7,7 +7,7 @@ app.controller('myController', function($scope, $http) {
 
       $scope.myFunc = function(username) {
 
-          /*  $http.get("https://api.github.com/users/"+ username)
+            $http.get("https://api.github.com/users/"+ username)
            .then(function(response) {
            $scope.Login = response.data["login"];
            $scope.UserID = response.data["id"];
@@ -16,17 +16,21 @@ app.controller('myController', function($scope, $http) {
            $scope.ProfilePhoto = response.data["avatar_url"];
            $scope.Company = response.data["company"];
            $scope.CreatedAt = response.data["created_at"];
-           });
-           */
-          var email = "dogacan.dandik@hotmail.com";
-         // apiKey
 
-          $http.get('https://api.fullcontact.com/v2/person.json?email='+email,
-              {params: {apiKey: 'b73984e6c124b0be'}})
-              .then(function(response) {
-                  $scope.FullContact = response.data;
-                  /
-              });
+               var email = response.data["email"];
+               var apiKey = "b73984e6c124b0be";
+
+
+               $http.get('https://api.fullcontact.com/v2/person.json?email='+ email+' &apiKey='+apiKey)
+                   .then(function(response) {
+                       $scope.FullContact = response.data['photos'];
+
+
+                   });
+
+           });
+
+
 
     };
 
