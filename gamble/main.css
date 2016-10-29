@@ -5,10 +5,20 @@
 
 }
 #p1{
-    text-align: left;
+    text-align: center;
     text-blink: true;
 
     font-weight: 600;
     font-family: "Helvetica Neue";
+
+}
+#dropdownMenu1{
+
+
+
+
+    text-align: center;
+
+    display: inline-block;
 
 }

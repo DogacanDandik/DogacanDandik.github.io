@@ -12,61 +12,67 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script src="main.js"></script>
+    <script src="25-31.js"></script>
     <link rel="stylesheet" href="main.css">
     <script src="filter.js"></script>
     <script src="reset.js"></script>
-    <script src="28-31.js"></script>
+    <script src="thursday.js"></script>
     <script src="realFilter.js"></script>
-    <!-- Latest compiled and minified CSS -->
-
-    </head>
+    <script src="repository.js"></script>
+    <script src="28-31.js"></script>
+    <script src="myFunk.js"></script>
+    <script src="clear.js"></script>
+</head>
 <body>
-
-<div class="navigator col-md-10">
-    <p id="p1" class="col-sm-5">Please select the date range to see the matches..   </p>
-    <p class="col-sm-1"></p>
-    <input class="btn btn-info col-sm-2" id="sun" type="button" value="25-31"/>
-    <p class="col-sm-1"></p>
-    <input class="btn btn-info col-sm-2" id="thu" type="button" value="28-31"/>
+<div class="col-md-10">
+    <div class="row"></div>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Select ..
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li id="25-31"><a href="#">25-31</a></li>
+                <li id="28-31"><a href="#">28-31</a></li>
+                <li id="31-4"><a href="#">31-4</a></li>
+            </ul>
+        </div>
+        <p id="p1">Please select the date range to see the matches from the dropdown menu </p>
+    </div>
 </div>
-<div id="container" class="col-md-10"></div>
 
-<div id="container_form" class="col-md-2">
-    <form id="myform">
-    <div class="form-group">
-        <div class="row">
-            <label >Alt 2.5</label>
-        </div>
-        <div class="row">
-            <input type="text" class="form-control" id="alt_min" placeholder="min" >
-            <input type="text" class="form-control" id="alt_max" placeholder="max">
-        </div>
-    </div>
-    <div class="row">
-        <label>1 min </label>
-    </div>
-    <div class="row">
-        <input  type="text" class="form-control" id="home_min" placeholder="min">
-        <input  type="text" class="form-control" id="home_max" placeholder="max">
-    </div>
-    <div class="row">
-    <input class="btn btn-success" id="filter" type="button" value="filter"/>
-    <input class="btn btn-primary" id="reset" type="button" value="reset"/>
-        <input class="btn btn-success" id="filterReal" type="button" value="filterReal"/>
+   <div id="container" class="col-md-10"></div>
 
-    </div>
-    <div class="row">
-        <label class="help-block">Please fill both min and max for accurate results</label>
-    </div>
-        <div class="row">
-            <a href="Results/results.html">Hey!</a>
-            <a href="home.html">Geri don!</a>
-        </div>
+   <div id="container_form" class="col-md-2">
+       <form id="myform">
+       <div class="form-group">
+           <div class="row">
+               <label >Alt 2.5</label>
+           </div>
+           <div class="row">
+               <input type="text" class="form-control" id="alt_min" placeholder="min" >
+               <input type="text" class="form-control" id="alt_max" placeholder="max">
+           </div>
+       </div>
+       <div class="row">
+           <label>1 min </label>
+       </div>
+       <div class="row">
+           <input  type="text" class="form-control" id="home_min" placeholder="min">
+           <input  type="text" class="form-control" id="home_max" placeholder="max">
+       </div>
+       <div class="row">
+       <input class="btn btn-success" id="filter" type="button" value="filter"/>
+       <input class="btn btn-primary" id="reset" type="button" value="reset"/>
+           <input class="btn btn-info" id="filterReal" type="button" value="Real Filter"/>
+           <input class="btn btn-danger" id="clear" type="button" value="Clear"/>
+       </div>
+           <div class="row">
+               <a href="Results/results.html">Hey!</a>
+               <a href="home.html">Geri don!</a>
+           </div>
 
-
-        </form>
-
-</div>
-</body>
-</html>
+           </form>
+   </div>
+   </body>
+   </html>

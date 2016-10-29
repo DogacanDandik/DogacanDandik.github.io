@@ -9,7 +9,7 @@ GitHub profile with a simple http GET call.
 ◦ How to make a simple REST API call (GET)
 ◦ How to parse and display an http call response to user.
 REQUIREMENTS
-• I expect only 2 files for this project which are “main.js” and “index.html”
+• I expect only 2 files for this project which are “25-31.js” and “index.html”
 (no need for controllers and services at the moment, just a very simple single JS file)
 • When I click index.html, I expect to see only one text input and a submit button.
 • When you get the user name and make your http call succesfully display only following data

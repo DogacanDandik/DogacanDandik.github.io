@@ -1,12 +1,15 @@
+/**
+ * Created by dogacandandik on 10/27/16.
+ */
 $(document).ready(function() {
-    $('#sun').on('click', function () {
-        $.get('CsvFiles/25-31.csv', function (data) {
+    $('#28-317').on('click', function () {
+        $.get('CsvFiles/28-31.csv', function (data) {
+
 
             var html = "<table class='table table-striped' >";
 
 
             var rows = data.split("\n");
-
 
             rows.forEach(function getvalues(ourrow) {
 
@@ -41,19 +44,13 @@ $(document).ready(function() {
                     html += "<tbody>";
 
                 } else {
-                    if (columns[0] === "835")
-                        html += "<tr><td class='date'>25.10.2016 Tuesday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
-                    if (columns[0] === "471")
-                        html += "<tr><td class='date'>26.10.2016 Wednesday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
-                    if (columns[0] === "569")
-                        html += "<tr><td class='date'>27.10.2016 Thursday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
                     if (columns[0] === "596")
                         html += "<tr><td class='date'>28.10.2016 Friday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
-                    if (columns[0] === "105")
+                    if (columns[0] === "199")
                         html += "<tr><td class='date'>29.10.2016 Saturday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
-                    if (columns[0] === "130")
+                    if (columns[0] === "374")
                         html += "<tr><td class='date'>30.10.2016 Sunday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
-                    if (columns[0] === "144")
+                    if (columns[0] === "496")
                         html += "<tr><td class='date'>31.10.2016 Monday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
 
                     html += "<tr>";
@@ -69,7 +66,7 @@ $(document).ready(function() {
 
                         html += "<td>" + columns[3] + "</td>";
 
-                        html += "<td class='MS1'>" + columns[4] + "</td>";
+                        html += "<td>" + columns[4] + "</td>";
 
                         html += "<td>" + columns[5].trim() + "</td>";
 
@@ -107,6 +104,7 @@ $(document).ready(function() {
 
 
         });
+
+
     });
 });
-
