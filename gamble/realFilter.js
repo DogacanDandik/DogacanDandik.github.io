@@ -18,13 +18,14 @@ $(document).ready(function () {
 
 
         $("#container table tbody tr").each(function() {
+            $(this).show();
             var ms1 = $(this).find("td.MS1");
             var alt = $(this).find("td.alt");
 
             if(ms1.html() !== "")
                 if(ms1.html() < home_min || ms1.html() > home_max || alt.html() !== "" && alt.html() < alt_min
                     || alt.html() > alt_max)
-                    this.remove();
+                    $(this).hide();
         });
 
     });

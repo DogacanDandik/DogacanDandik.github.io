@@ -19,25 +19,26 @@ $(document).ready(function () {
 
 
         $("#container table tbody tr").each(function() {
+            $(this).show();
             var ms1 = $(this).find("td.MS1");
             var alt = $(this).find("td.alt");
 
             if(ms1.html() !== "")
                 if(ms1.html() < home_min || ms1.html() > home_max || alt.html() !== "" && alt.html() < alt_min
                     || alt.html() > alt_max)
-                    this.remove();
+                    $(this).hide();
         });
-        var ms;
         $("#container table tbody tr").each(function() {
 
-            ms = $(this).find("td.MS");
-
+            var ms = $(this).find("td.MS");
+            if($(this).is(":visible")){
             if(ms.html() !== undefined){
                 count++;
                 var str = ms.html();
                 if (str[0] === str[2])
                     beraber++;
             }
+        }
         });
         $('#p1').html(count);
         $('#p2').html(beraber);
