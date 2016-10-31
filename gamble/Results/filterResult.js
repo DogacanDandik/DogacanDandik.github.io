@@ -45,7 +45,7 @@ $(document).ready(function() {
                     html += "<tbody>";
 
                 }else {
-                    if(columns[0] === "835")
+                    if(columns[0] === "401")
                         html += "<tr><td class='date'>25.10.2016 Tuesday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
                     if(columns[0] === "471")
                         html += "<tr><td class='date'>26.10.2016 Wednesday<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";

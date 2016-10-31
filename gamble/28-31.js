@@ -4,7 +4,7 @@
 $(document).ready(function() {
     $('#28-31').on('click', function () {
         flag = "28-31";
-        myFunk("28-31");
+        myFunk(flag);
     });
 });
 
