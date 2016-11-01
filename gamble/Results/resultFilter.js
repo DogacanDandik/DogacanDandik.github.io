@@ -1,6 +1,3 @@
-/**
- * Created by dogacandandik on 10/27/16.
- */
 $(document).ready(function () {
     var count=0;
     var beraber=0;
@@ -28,23 +25,43 @@ $(document).ready(function () {
                     || alt.html() > alt_max)
                     $(this).hide();
         });
+        var html = "";
+        var max="";
         $("#container table tbody tr").each(function() {
 
             var ms = $(this).find("td.MS");
+
             if($(this).is(":visible")){
+                var doda = $(this).find("td.MS1");
+
+
             if(ms.html() !== undefined){
                 count++;
                 var str = ms.html();
-                if (str[0] === str[2])
+
+                if (str[0] === str[2]){
+                    if(max < doda.html())
+                        max = doda.html();
+
+                    html += doda.html();
+                    html += "<br/>";
                     beraber++;
+                }
             }
+
         }
+
         });
+
+        $('#p4').empty().append(html);
         $('#p1').html(count);
         $('#p2').html(beraber);
         $('#p3').html(Math.floor((beraber / count) * 100)).append("%");
+
         count = 0;
-        beraber =0;
+        beraber = 0;
+
+
 
     });
 
