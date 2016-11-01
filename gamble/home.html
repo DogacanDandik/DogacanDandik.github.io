@@ -12,39 +12,31 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script src="25-31.js"></script>
     <link rel="stylesheet" href="main.css">
-    <script src="filter.js"></script>
-    <script src="reset.js"></script>
-    <script src="thursday.js"></script>
-    <script src="realFilter.js"></script>
-    <script src="repository.js"></script>
-    <script src="28-31.js"></script>
-    <script src="myFunk.js"></script>
-    <script src="clear.js"></script>
-</head>
+    <script src="controller.js"></script>
+
 <body>
-<div class="col-md-10">
-    <div class="row"></div>
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Select ..
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li id="25-31"><a href="#">25-31</a></li>
-                <li id="28-31"><a href="#">28-31</a></li>
-                <li id="31-4"><a href="#">31-4</a></li>
-            </ul>
-        </div>
+    <div class="col-md-10">
+        <div class="row"></div>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Select ..
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li id="25-31"><a href="#">25-31</a></li>
+                    <li id="28-31"><a href="#">28-31</a></li>
+                    <li id="1-6"><a href="#">1-6</a></li>
+                </ul>
+            </div>
         <p id="p1">Please select the date range to see the matches from the dropdown menu </p>
     </div>
-</div>
+
 
    <div id="container" class="col-md-10"></div>
 
    <div id="container_form" class="col-md-2">
-       <form id="myform">
+       <form id="form">
        <div class="form-group">
            <div class="row">
                <label >Alt 2.5</label>
@@ -62,14 +54,12 @@
            <input  type="text" class="form-control" id="home_max" placeholder="max">
        </div>
        <div class="row">
-       <input class="btn btn-success" id="filter" type="button" value="filter"/>
-       <input class="btn btn-primary" id="reset" type="button" value="reset"/>
-           <input class="btn btn-info" id="filterReal" type="button" value="Real Filter"/>
+           <input class="btn btn-info" id="filter" type="button" value="Filter"/>
+           <input class="btn btn-primary" id="reset" type="button" value="Reset"/>
            <input class="btn btn-danger" id="clear" type="button" value="Clear"/>
        </div>
            <div class="row">
                <a href="Results/results.html">Hey!</a>
-               <a href="home.html">Geri don!</a>
            </div>
 
            </form>
