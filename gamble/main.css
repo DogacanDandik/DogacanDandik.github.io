@@ -19,3 +19,20 @@
     display: inline-block;
 
 }
+#results{
+    background-color: black; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 76px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btns{
+    height:40px;
+    width:67px;
+}

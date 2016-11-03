@@ -11,71 +11,72 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
     <link rel="stylesheet" href="style.css">
 
-    <script src="resultJS.js"></script>
-    <script src="filterResult.js"></script>
-    <script src="resetResult.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
 
-    <script src="resultFilter.js"></script>
 
 </head>
 <body>
+    <div class="col-md-10">
+        <div class="row"></div>
 
+        <p id="p5">Please select the date range to see the matches from the dropdown menu </p>
+    </div>
+    <div id="container" class="col-md-10"></div>
 
-<div id="container" class="col-md-10"></div>
-
-<div id="container_form" class="col-md-2">
-    <form >
-        <div class="form-group">
-            <div class="row">
-                <label >Alt 2.5</label>
+    <div id="container_form" class="col-md-2">
+        <form >
+            <div class="form-group">
+                <div class="row">
+                    <a href="../home.html"><input class="btn btn-danger"  id="nowplaying" type="button" value="Now Playing"/></a>
+                </div>
+                <div class="row">
+                    <label >Alt 2.5</label>
+                </div>
+                <div class="row">
+                    <input type="text" class="form-control" id="alt_min" placeholder="min" >
+                    <input type="text" class="form-control" id="alt_max" placeholder="max">
+                </div>
             </div>
             <div class="row">
-                <input type="text" class="form-control" id="alt_min" placeholder="min" >
-                <input type="text" class="form-control" id="alt_max" placeholder="max">
+                <label>1 min </label>
             </div>
-        </div>
-        <div class="row">
-            <label>1 min </label>
-        </div>
-        <div class="row">
-            <input  type="text" class="form-control" id="home_min" placeholder="min">
-            <input  type="text" class="form-control" id="home_max" placeholder="max">
-        </div>
-        <div class="row">
-            <input class="btn btn-success" id="filter" type="button" value="filter"/>
-            <input class="btn btn-primary" id="reset" type="button" value="reset"/>
-            <input class="btn btn-info" id="resultFilter" type="button" value="Real Filter"/>
-        </div>
-        <div class="row">
-            <label class="help-block">Please fill both min and max for accurate results</label>
-        </div>
-        <div class="row">
-            <a href="results.html">Hey!</a>
-            <a href="../home.html">Geri don!</a>
-        </div>
-        <div class="row">
-            <input class="btn btn-secondar" id="11-17" type="button" value="11-17"/>
-            <input class="btn btn-secondary" id="18-24" type="button" value="18-24"/>
-            <input class="btn btn-secondar" id="25-31" type="button" value="25-31"/>
+            <div class="row">
+                <input  type="text" class="form-control" id="home_min" placeholder="min">
+                <input  type="text" class="form-control" id="home_max" placeholder="max">
+            </div>
+            <div class="row">
+                <input class="btn btn-info btns" id="filter" type="button" value="Filter"/>
+                <input class="btn btn-primary btns" id="reset" type="button" value="Reset"/>
+                <input class="btn btn-warning btns" id="clear" type="button" value="Clear" />
+            </div>
+            <div class="row">
 
-        </div>
+                    <div class="dropdown">
 
-    </form>
-    <form>
-        <div class="row">
-            Mac sayisi: <p id="p1"></p>
-            Beraberlik sayisi: <p id="p2"></p>
-            Yuzde oran: <p id="p3"></p>
-        </div>
-        <div class="row">
-            Berabere kalinan MS1: <div id="p4"></div>
-        </div>
-    </form>
-</div>
+                        <button class="btn btn-success dropdown-toggle " type="button" id="ddbtn" data-toggle="dropdown">Select
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li id="11-17"><a href="#">11-17 October</a></li>
+                            <li id="18-24"><a href="#">18-24 October</a></li>
+                            <li id="25-31"><a href="#">25-31 October</a></li>
+                        </ul>
+                    </div>
+
+            </div>
+
+        </form>
+        <form class="form">
+            <div class="row">
+                Total Matches: <p id="p1"></p>
+                Total Ties: <p id="p2"></p>
+                Ties Percentage: <p id="p3"></p>
+            </div>
+            <div class="row">
+                Total Ties MS1 values: <div id="p4"></div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

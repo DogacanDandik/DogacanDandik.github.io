@@ -93,7 +93,7 @@ function myFunk(docName) {
 
     var dates = [date1, date2, date3, date4, date5, date6, date7];
 
-    getMatches('CsvFiles/' +  val + '.csv', dates);
+    getMatches('CsvFiles/CsvNow/' +  val + '.csv', dates);
 
 }
 
