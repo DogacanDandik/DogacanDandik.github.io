@@ -13,6 +13,10 @@ $(document).ready(function() {
         flag = "1-6";
         myFunk(flag);
     });
+    $('#4-7').on('click', function () {
+        flag = "4-7";
+        myFunk(flag);
+    });
     $('#clear').on('click',function () {
 
         $('#alt_min').val('');
@@ -84,10 +88,23 @@ function myFunk(docName) {
         var date1 = ["01.11.2016 Tuesday", "401"];
         var date2 = ["02.11.2016 Wednesday", "422"];
         var date3 = ["03.11.2016 Thursday", "452"];
-        var date4 = ["04.10.2016 Friday", "499"];
-        var date5 = ["05.10.2016 Saturday", "105"];
-        var date6 = ["06.10.2016 Sunday", "132"];
-        var date7 = ["07.10.2016 Monday", ""];
+        var date4 = ["04.11.2016 Friday", "499"];
+        var date5 = ["05.11.2016 Saturday", "105"];
+        var date6 = ["06.11.2016 Sunday", "132"];
+        var date7 = ["07.11.2016 Monday", ""];
+
+    }else if(docName === "4-7"){
+
+        var val = document.getElementById('4-7').id;
+
+        var date1 = ["01.11.2016 Tuesday", ""];
+        var date2 = ["02.11.2016 Wednesday", ""];
+        var date3 = ["03.11.2016 Thursday", ""];
+        var date4 = ["04.11.2016 Friday", "499"];
+        var date5 = ["05.11.2016 Saturday", "209"];
+        var date6 = ["06.11.2016 Sunday", "394"];
+        var date7 = ["07.11.2016 Monday", "521"];
+
 
     }
 
