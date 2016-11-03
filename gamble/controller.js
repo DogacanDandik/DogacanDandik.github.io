@@ -21,8 +21,14 @@ $(document).ready(function() {
 
         $('#alt_min').val('');
         $('#alt_max').val('');
+        $('#ust_min').val('');
+        $('#ust_max').val('');
         $('#home_min').val('');
         $('#home_max').val('');
+        $('#tie_min').val('');
+        $('#tie_max').val('');
+        $('#away_min_min').val('');
+        $('#away_max').val('');
     });
     $('#reset').on('click',function () {
         if(flag !== 0)
@@ -34,23 +40,40 @@ $(document).ready(function() {
 
         var alt_min = $('#alt_min').val();
         var alt_max = $('#alt_max').val();
+        var ust_min = $('#ust_min').val();
+        var ust_max = $('#ust_max').val();
         var home_min = $('#home_min').val();
         var home_max = $('#home_max').val();
+        var tie_min = $('#tie_min').val();
+        var tie_max = $('#tie_max').val();
+        var away_min = $('#away_min').val();
+        var away_max = $('#away_max').val();
+
         if (alt_min.length === 0 )alt_min = 0.1;
         if (alt_max.length === 0 )alt_max = 10;
+        if (ust_min.length === 0 )ust_min = 0.1;
+        if (ust_max.length === 0 )ust_max = 10;
         if (home_min.length === 0)home_min = 0.1;
         if (home_max.length === 0)home_max = 10;
+        if (tie_min.length === 0)tie_min = 0.1;
+        if (tie_max.length === 0)tie_max = 10;
+        if (away_min.length === 0)away_min = 0.1;
+        if (away_max.length === 0)away_max = 10;
 
 
         $("#container table tbody tr").each(function() {
             $(this).show();
             var ms1 = $(this).find("td.MS1");
+            var ms0 = $(this).find("td.MS0");
+            var ms2 = $(this).find("td.MS2");
             var alt = $(this).find("td.alt");
+            var ust = $(this).find("td.alt");
 
             if(ms1.html() !== "")
                 if(ms1.html() < home_min || ms1.html() > home_max || alt.html() !== "" && alt.html() < alt_min
                     || alt.html() > alt_max)
                     $(this).hide();
+            //we need to figure it out how to delete
         });
 
     });
@@ -186,13 +209,13 @@ function getMatches(doc, dates){
 
                 html += "<td class='MS1'>" + columns[4] + "</td>";
 
-                html += "<td>" + columns[5] + "</td>";
+                html += "<td class='MS0'>" + columns[5] + "</td>";
 
-                html += "<td>" + columns[6] + "</td>";
+                html += "<td class='MS2'>" + columns[6] + "</td>";
 
                 html += "<td class='alt'>" + columns[7] + "</td>";
 
-                html += "<td>" + columns[8] + "</td>";
+                html += "<td class='ust'>" + columns[8] + "</td>";
 
 
 
