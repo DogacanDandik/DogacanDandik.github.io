@@ -1,5 +1,12 @@
 var flag = "1-6";
 $(document).ready(function() {
+
+    $('#ust_min').focus(function(){$(this).blur();});
+    $('#ust_max').focus(function(){$(this).blur();});
+    $('#tie_min').focus(function(){$(this).blur();});
+    $('#tie_max').focus(function(){$(this).blur();});
+    $('#away_min').focus(function(){$(this).blur();});
+    $('#away_max').focus(function(){$(this).blur();});
     myFunk(flag);
     $('#25-31').on('click', function () {
         flag = "25-31";
