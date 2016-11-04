@@ -3,18 +3,22 @@ $(document).ready(function() {
 
     myFunk(flag);
     $('#25-31').on('click', function () {
+        $('#dropdownMenu1').html("25-31");
         flag = "25-31";
         myFunk(flag);
     });
     $('#28-31').on('click', function () {
+        $('#dropdownMenu1').html("28-31");
         flag = "28-31";
         myFunk(flag);
     });
     $('#1-6').on('click', function () {
+        $('#dropdownMenu1').html("1-6");
         flag = "1-6";
         myFunk(flag);
     });
     $('#4-7').on('click', function () {
+        $('#dropdownMenu1').html("4-7");
         flag = "4-7";
         myFunk(flag);
     });
@@ -28,10 +32,11 @@ $(document).ready(function() {
         $('#home_max').val('');
         $('#tie_min').val('');
         $('#tie_max').val('');
-        $('#away_min_min').val('');
+        $('#away_min').val('');
         $('#away_max').val('');
     });
     $('#reset').on('click',function () {
+        $('#dropdownMenu1').html("Select");
         if(flag !== 0)
             myFunk(flag);
 
@@ -68,7 +73,7 @@ $(document).ready(function() {
             var ms0 = $(this).find("td.MS0");
             var ms2 = $(this).find("td.MS2");
             var alt = $(this).find("td.alt");
-            var ust = $(this).find("td.alt");
+            var ust = $(this).find("td.ust");
             if(ms1.html() ===  "" &&  alt.html() === "")
                 $(this).hide();
             if(ms1.html() !==  "")

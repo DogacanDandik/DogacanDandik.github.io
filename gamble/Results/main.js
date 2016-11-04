@@ -48,9 +48,13 @@ $(document).ready(function () {
             var ms1 = $(this).find("td.MS1");
             var alt = $(this).find("td.alt");
 
-            if(ms1.html() !== "")
-                if(ms1.html() < home_min || ms1.html() > home_max || alt.html() !== "" && alt.html() < alt_min
-                    || alt.html() > alt_max)
+            if(ms1.html() === "-" && alt.html() === "-")
+                $(this).hide();
+            if(ms1.html() !== "-")
+                if(ms1.html() < home_min || ms1.html() > home_max)
+                    $(this).hide();
+            if(alt.html() !== "-")
+                if(alt.html() < alt_min || alt.html() > alt_max)
                     $(this).hide();
         });
         var html = "";
