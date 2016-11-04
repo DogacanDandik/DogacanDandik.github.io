@@ -1,12 +1,6 @@
 var flag = "1-6";
 $(document).ready(function() {
 
-    $('#ust_min').focus(function(){$(this).blur();});
-    $('#ust_max').focus(function(){$(this).blur();});
-    $('#tie_min').focus(function(){$(this).blur();});
-    $('#tie_max').focus(function(){$(this).blur();});
-    $('#away_min').focus(function(){$(this).blur();});
-    $('#away_max').focus(function(){$(this).blur();});
     myFunk(flag);
     $('#25-31').on('click', function () {
         flag = "25-31";
@@ -78,10 +72,12 @@ $(document).ready(function() {
             if(ms1.html() ===  "" &&  alt.html() === "")
                 $(this).hide();
             if(ms1.html() !==  "")
-                if(ms1.html() < home_min || ms1.html() > home_max || alt.html() !== "" && alt.html() < alt_min
-                    || alt.html() > alt_max)
+                if(ms1.html() < home_min || ms1.html() >= home_max || ms0.html() < tie_min || ms0.html() >= tie_max || ms2.html() < away_min || ms2.html() >= away_max)
                     $(this).hide();
-            //we need to figure it out how to delete
+            if(alt.html() !== "")
+                if(alt.html() < alt_min || alt.html() >= alt_max || ust.html() < ust_min || ust.html() >= ust_max)
+                    $(this).hide();
+
         });
 
     });
