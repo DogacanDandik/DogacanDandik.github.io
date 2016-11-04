@@ -57,15 +57,15 @@ $(document).ready(function() {
         var away_max = $('#away_max').val();
 
         if (alt_min.length === 0 )alt_min = 0.1;
-        if (alt_max.length === 0 )alt_max = 10;
+        if (alt_max.length === 0 )alt_max = 100;
         if (ust_min.length === 0 )ust_min = 0.1;
-        if (ust_max.length === 0 )ust_max = 10;
+        if (ust_max.length === 0 )ust_max = 100;
         if (home_min.length === 0)home_min = 0.1;
-        if (home_max.length === 0)home_max = 10;
+        if (home_max.length === 0)home_max = 100;
         if (tie_min.length === 0)tie_min = 0.1;
-        if (tie_max.length === 0)tie_max = 10;
+        if (tie_max.length === 0)tie_max = 100;
         if (away_min.length === 0)away_min = 0.1;
-        if (away_max.length === 0)away_max = 10;
+        if (away_max.length === 0)away_max = 100;
 
 
         $("#container table tbody tr").each(function() {
@@ -75,8 +75,9 @@ $(document).ready(function() {
             var ms2 = $(this).find("td.MS2");
             var alt = $(this).find("td.alt");
             var ust = $(this).find("td.alt");
-
-            if(ms1.html() !== "")
+            if(ms1.html() ===  "" &&  alt.html() === "")
+                $(this).hide();
+            if(ms1.html() !==  "")
                 if(ms1.html() < home_min || ms1.html() > home_max || alt.html() !== "" && alt.html() < alt_min
                     || alt.html() > alt_max)
                     $(this).hide();
