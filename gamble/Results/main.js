@@ -6,6 +6,21 @@ $(document).ready(function () {
             myFunk(flag);
         $('#container').empty();
     });
+    $('#20-26').on('click', function () {
+        $('#ddbtn').html("20-26");
+        flag = "20-26";
+        myFunk(flag);
+    });
+    $('#27-3').on('click', function () {
+        $('#ddbtn').html("27-3");
+        flag = "27-3";
+        myFunk(flag);
+    });
+    $('#4-10').on('click', function () {
+        $('#ddbtn').html("4-10");
+        flag = "4-10";
+        myFunk(flag);
+    });
     $('#11-17').on('click', function () {
         $('#ddbtn').html("11-17");
         flag = "11-17";
@@ -141,6 +156,36 @@ function myFunk(docName) {
         var date5 = ["15.10.2016 Saturday", "105"];
         var date6 = ["16.10.2016 Sunday", "134"];
         var date7 = ["17.10.2016 Monday", "155"];
+
+    }else if(docName === "4-10"){
+        var val = document.getElementById('4-10').id;
+        var date1 = ["4.10.2016 Tuesday", "401"];
+        var date2 = ["5.10.2016 Wednesday", "447"];
+        var date3 = ["6.10.2016 Thursday", "461"];
+        var date4 = ["7.10.2016 Friday", "101"];
+        var date5 = ["8.10.2016 Saturday", "137"];
+        var date6 = ["9.10.2016 Sunday", "154"];
+        var date7 = ["10.10.2016 Monday", "322"];
+
+    }else if(docName === "27-3"){
+        var val = document.getElementById('27-3').id;
+        var date1 = ["27.09.2016 Tuesday", "401"];
+        var date2 = ["28.09.2016 Wednesday", "463"];
+        var date3 = ["29.09.2016 Thursday", "490"];
+        var date4 = ["30.09.2016 Friday", "101"];
+        var date5 = ["1.10.2016 Saturday", "106"];
+        var date6 = ["2.10.2016 Sunday", "133"];
+        var date7 = ["3.10.2016 Monday", "538"];
+
+    }else if(docName === "20-26"){
+        var val = document.getElementById('20-26').id;
+        var date1 = ["20.09.2016 Tuesday", "404"];
+        var date2 = ["21.09.2016 Wednesday", "475"];
+        var date3 = ["22.09.2016 Thursday", "607"];
+        var date4 = ["23.09.2016 Friday", "101"];
+        var date5 = ["24.09.2016 Saturday", "102"];
+        var date6 = ["25.09.2016 Sunday", "113"];
+        var date7 = ["26.09.2016 Monday", "118"];
 
     }else{
         var val = document.getElementById('1-6').id;
