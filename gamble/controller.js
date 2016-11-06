@@ -23,9 +23,9 @@ $(document).ready(function() {
         var kodtd= "<td>" + kod + "</td>";
         var hometd= "<td>" + home + "</td>";
         var awaytd= "<td>" + away + "</td>"
-        var linktd= "<td>" + link + "</td>"
+
         var minus = "<td class='minus'>" + "<span class='glyphicon glyphicon-minus-sign button' aria-hidden='true'></span>"
-        var html = "<tr>" + kodtd + hometd + awaytd + linktd + minus + "</tr>";
+        var html = "<tr>" + kodtd + hometd + awaytd  + minus + "</tr>";
 
         $('#selectedMatches').append(html);
 
