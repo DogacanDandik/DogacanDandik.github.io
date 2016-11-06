@@ -36,3 +36,23 @@
     height:40px;
     width:67px;
 }
+.button {
+    padding: 9px 12px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: aqua;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+
+}
+
+.button:hover {background-color: blue}
+
+.button:active {
+    background-color: black;
+
+    transform: translateX(3px) translateY(3px);
+
+}

@@ -1,6 +1,43 @@
 var flag = "1-6";
 $(document).ready(function() {
 
+    $("#down").on('click',function () {
+        window.open('data:application/vnd.ms-excel,' + $('#selectedMatches').html());
+        e.preventDefault();
+
+    });
+    $(document).on('click', ".add", function() {
+        $(this).removeClass('add');
+
+        var kod = $(this).parent().find('td:eq(0)').html();
+        var saat = $(this).parent().find('td:eq(1)').html();
+        var home = $(this).parent().find('td:eq(2)').html();
+        var away = $(this).parent().find('td:eq(3)').html();
+        var MS1 = $(this).parent().find('td:eq(4)').html();
+        var MS0 = $(this).parent().find('td:eq(5)').html();
+        var MS2 = $(this).parent().find('td:eq(6)').html();
+        var alt = $(this).parent().find('td:eq(7)').html();
+        var ust = $(this).parent().find('td:eq(8)').html();
+        var link = $(this).parent().find('td:eq(9)').html();
+        $(this).attr('id', kod)
+        var kodtd= "<td>" + kod + "</td>";
+        var hometd= "<td>" + home + "</td>";
+        var awaytd= "<td>" + away + "</td>"
+        var linktd= "<td>" + link + "</td>"
+        var minus = "<td class='minus'>" + "<span class='glyphicon glyphicon-minus-sign button' aria-hidden='true'></span>"
+        var html = "<tr>" + kodtd + hometd + awaytd + linktd + minus + "</tr>";
+
+        $('#selectedMatches').append(html);
+
+
+    });
+
+    $(document).on('click', ".minus", function() {
+        $(this).parent().remove();
+        var id = '#' + $(this).parent().find('td:eq(0)').html();
+        $(id).addClass('add');
+    });
+
     myFunk(flag);
     $('#25-31').on('click', function () {
         $('#dropdownMenu1').html("25-31");
@@ -35,6 +72,7 @@ $(document).ready(function() {
         $('#away_min').val('');
         $('#away_max').val('');
     });
+
     $('#reset').on('click',function () {
         $('#dropdownMenu1').html("Select");
         if(flag !== 0)
@@ -189,19 +227,19 @@ function getMatches(doc, dates){
 
 
             if (columns[0] === dates[0][1])
-                html += "<tr><td class='date'>" + dates[0][0] + "<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[0][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[1][1])
-                html += "<tr><td class='date'>" + dates[1][0] + "<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[1][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[2][1])
-                html += "<tr><td class='date'>" + dates[2][0] + "<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[2][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[3][1])
-                html += "<tr><td class='date'>" + dates[3][0] + "<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[3][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[4][1])
-                html += "<tr><td class='date'>" + dates[4][0] + "<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[4][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[5][1])
-                html += "<tr><td class='date'>" + dates[5][0] + "<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[5][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[6][1])
-                html += "<tr><td class='date'>" + dates[6][0] + "<td/><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[6][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
 
 
 
@@ -233,6 +271,9 @@ function getMatches(doc, dates){
                 html += '<td>';
                 html += '<a href="' + path + '">Check Teams</a>';
                 html += '</td>';
+
+                html += "<td class='add plus'>" + "<span class='glyphicon glyphicon-plus-sign button clickable-row' aria-hidden='true'></span>" + "</td>";
+
                 html += "</tr>";
 
 
@@ -246,3 +287,4 @@ function getMatches(doc, dates){
 
     });
 }
+
