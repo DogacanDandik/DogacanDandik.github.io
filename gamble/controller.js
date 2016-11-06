@@ -2,10 +2,13 @@ var flag = "1-6";
 $(document).ready(function() {
 
     $("#down").on('click',function () {
-        window.open('data:application/vnd.ms-excel,' + $('#selectedMatches').html());
-        e.preventDefault();
-
+       //window.open('data:application/csv,' + $('#selectedMatches').html());
+      //  e.preventDefault();
+        $(".downTable").tableExport({                   // (Boolean), display table footers (th/td elements) in the <tfoot>
+            formats: ["xls"]
+        });
     });
+
     $(document).on('click', ".add", function() {
         $(this).removeClass('add');
 
