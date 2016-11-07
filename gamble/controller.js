@@ -68,6 +68,11 @@ $(document).ready(function() {
         flag = "4-7";
         myFunk(flag);
     });
+    $('#8-13').on('click', function () {
+        $('#dropdownMenu1').html("8-13");
+        flag = "8-13";
+        myFunk(flag);
+    });
     $('#clear').on('click',function () {
 
         $('#alt_min').val('');
@@ -183,6 +188,18 @@ function myFunk(docName) {
         var date5 = ["05.11.2016 Saturday", "209"];
         var date6 = ["06.11.2016 Sunday", "394"];
         var date7 = ["07.11.2016 Monday", "521"];
+
+    }else if(docName === "8-13"){
+
+        var val = document.getElementById('8-13').id;
+
+        var date1 = ["08.11.2016 Tuesday", "527"];
+        var date2 = ["09.11.2016 Wednesday", "426"];
+        var date3 = ["10.11.2016 Thursday", "468"];
+        var date4 = ["11.11.2016 Friday", "474"];
+        var date5 = ["12.11.2016 Saturday", "104"];
+        var date6 = ["13.11.2016 Sunday", "107"];
+        var date7 = ["14.11.2016 Monday", ""];
 
     }
 
