@@ -129,10 +129,10 @@ $(document).ready(function() {
             if(ms1.html() ===  "" &&  alt.html() === "")
                 $(this).hide();
             if(ms1.html() !==  "")
-                if(parseFloat(ms1.html()) < parseFloat(home_min) || parseFloat(ms1.html()) >= parseFloat(home_max) || parseFloat(ms0.html()) < parseFloat(tie_min) || parseFloat(ms0.html()) >= parseFloat(tie_max) || parseFloat(ms2.html()) < parseFloat(away_min) || parseFloat(ms2.html()) >= parseFloat(away_max))
+                if(parseFloat(ms1.html()) < parseFloat(home_min) || parseFloat(ms1.html()) > parseFloat(home_max) || parseFloat(ms0.html()) < parseFloat(tie_min) || parseFloat(ms0.html()) > parseFloat(tie_max) || parseFloat(ms2.html()) < parseFloat(away_min) || parseFloat(ms2.html()) > parseFloat(away_max))
                     $(this).hide();
             if(alt.html() !== "")
-                if(parseFloat(alt.html()) < parseFloat(alt_min) || parseFloat(alt.html()) >= parseFloat(alt_max) || parseFloat(ust.html()) < parseFloat(ust_min) || parseFloat(ust.html()) >= parseFloat(ust_max))
+                if(parseFloat(alt.html()) < parseFloat(alt_min) || parseFloat(alt.html()) > parseFloat(alt_max) || parseFloat(ust.html()) < parseFloat(ust_min) || parseFloat(ust.html()) > parseFloat(ust_max))
                     $(this).hide();
 
         });
