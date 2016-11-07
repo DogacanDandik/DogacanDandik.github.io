@@ -36,6 +36,11 @@ $(document).ready(function () {
         flag = "25-31";
         myFunk(flag);
     });
+    $('#1-7').on('click', function () {
+        $('#ddbtn').html("1-7");
+        flag = "1-7";
+        myFunk(flag);
+    });
     $('#clear').on('click',function () {
 
         $('#alt_min').val('');
@@ -57,11 +62,15 @@ $(document).ready(function () {
         if (home_min.length === 0)home_min = 0.1;
         if (home_max.length === 0)home_max = 10;
 
-
-        $("#container table tbody tr").each(function() {
+        var tr = $("#container table tbody tr");
+        tr.each(function() {
             $(this).show();
             var ms1 = $(this).find("td.MS1");
+            var ms0 = $(this).find("td.MS0");
+            var ms2 = $(this).find("td.MS2");
             var alt = $(this).find("td.alt");
+            var ust = $(this).find("td.alt");
+
 
             if(ms1.html() === "-" && alt.html() === "-")
                 $(this).hide();
@@ -74,7 +83,7 @@ $(document).ready(function () {
         });
         var html = "";
         var max="";
-        $("#container table tbody tr").each(function() {
+        tr.each(function() {
 
             var ms = $(this).find("td.MS");
 
@@ -112,17 +121,17 @@ $(document).ready(function () {
 });
 
 function myFunk(docName) {
-    if(docName === "1-6"){
+    if(docName === "1-7"){
 
-        var val = document.getElementById('1-6').id;
+        var val = document.getElementById('1-7').id;
 
         var date1 = ["01.11.2016 Tuesday", "401"];
         var date2 = ["02.11.2016 Wednesday", "422"];
-        var date3 = ["03.11.2016 Thursday", "452"];
-        var date4 = ["04.10.2016 Friday", "499"];
-        var date5 = ["05.10.2016 Saturday", "105"];
-        var date6 = ["06.10.2016 Sunday", "132"];
-        var date7 = ["07.10.2016 Monday", ""];
+        var date3 = ["03.11.2016 Thursday", "451"];
+        var date4 = ["04.11.2016 Friday", "101"];
+        var date5 = ["05.11.2016 Saturday", "105"];
+        var date6 = ["06.11.2016 Sunday", "132"];
+        var date7 = ["07.11.2016 Monday", "509"];
 
     }
     else if (docName === "25-31") {
@@ -275,13 +284,13 @@ function getMatches(doc, dates){
 
             html += "<td class='MS1'>" + columns[4] + "</td>";
 
-            html += "<td>" + columns[5] + "</td>";
+            html += "<td class='MS0'>" + columns[5] + "</td>";
 
-            html += "<td>" + columns[6] + "</td>";
+            html += "<td class='MS2'>" + columns[6] + "</td>";
 
             html += "<td class='alt'>" + columns[7] + "</td>";
 
-            html += "<td>" + columns[8] + "</td>";
+            html += "<td class='ust'>" + columns[8] + "</td>";
 
             html += "<td>" + columns[9] + "</td>";
 
