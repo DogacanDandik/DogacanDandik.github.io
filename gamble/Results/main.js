@@ -7,37 +7,38 @@ $(document).ready(function () {
         $('#container').empty();
     });
     $('#20-26').on('click', function () {
-        $('#ddbtn').html("20-26");
+
+        $('#doc').html($('#20-26').html());
         flag = "20-26";
         myFunk(flag);
     });
     $('#27-3').on('click', function () {
-        $('#ddbtn').html("27-3");
+        $('#doc').html($('#27-3').html());
         flag = "27-3";
         myFunk(flag);
     });
     $('#4-10').on('click', function () {
-        $('#ddbtn').html("4-10");
+        $('#doc').html($('#4-10').html());
         flag = "4-10";
         myFunk(flag);
     });
     $('#11-17').on('click', function () {
-        $('#ddbtn').html("11-17");
+        $('#doc').html($('#11-17').html());
         flag = "11-17";
         myFunk(flag);
     });
     $('#18-24').on('click', function () {
-        $('#ddbtn').html("18-24");
+        $('#doc').html($('#18-24').html());
         flag = "18-24";
         myFunk(flag);
     });
     $('#25-31').on('click', function () {
-        $('#ddbtn').html("25-31");
+        $('#doc').html($('#25-31').html());
         flag = "25-31";
         myFunk(flag);
     });
     $('#1-7').on('click', function () {
-        $('#ddbtn').html("1-7");
+        $('#doc').html($('#1-7').html());
         flag = "1-7";
         myFunk(flag);
     });
@@ -114,7 +115,7 @@ $(document).ready(function () {
 
         });
 
-        $('#p4').empty().append(html);
+
         $('#p1').html(count);
         $('#p2').html(beraber);
         $('#p3').html(Math.floor((beraber / count) * 100)).append("%");

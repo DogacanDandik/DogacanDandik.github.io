@@ -18,74 +18,110 @@
 
 </head>
 <body>
-    <div class="col-md-10">
-        <div class="row"></div>
+    <div class="col-md-9">
+        <div class="row"><label id="doc"></label></div>
+       <p id="p5">Please select the date range to see the matches from the dropdown menu </p>
 
-        <p id="p5">Please select the date range to see the matches from the dropdown menu </p>
+
     </div>
-    <div id="container" class="col-md-10"></div>
+    <div id="container" class="col-md-9"></div>
 
-    <div id="container_form" class="col-md-2">
-        <form >
+
+    <div id="container_form" class="col-md-3">
+        <form>
             <div class="form-group">
-                <div class="row">
-                    <a href="../home.html"><input class="btn btn-danger"  id="nowplaying" type="button" value="Now Playing"/></a>
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <a href="../home.html"><input class="btn btn-danger"  id="nowplaying" type="button" value="Now Playing"/></a>
+                    </div>
                 </div>
-                <div class="row">
-                    <label >Alt 2.5</label>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <label>Alt</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Ust</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label>TBD</label>
+                    </div>
                 </div>
-                <div class="row">
-                    <input type="text" class="form-control" id="alt_min" placeholder="min" >
-                    <input type="text" class="form-control" id="alt_max" placeholder="max">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="alt_min" placeholder="min">
+                        <input type="text" class="form-control" id="alt_max" placeholder="max">
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <input type="text" class="form-control" id="ust_min" placeholder="min">
+                        <input type="text" class="form-control" id="ust_max" placeholder="max">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="idle" placeholder="?">
+                        <input type="text" class="form-control" id="idle2" placeholder="?">
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <label>1 min </label>
-            </div>
-            <div class="row">
-                <input  type="text" class="form-control" id="home_min" placeholder="min">
-                <input  type="text" class="form-control" id="home_max" placeholder="max">
-            </div>
-            <div class="row">
-                <label>2 min </label>
-            </div>
-            <div class="row">
-                <input  type="text" class="form-control" id="away_min" placeholder="min">
-                <input  type="text" class="form-control" id="away_max" placeholder="max">
-            </div>
-            <div class="row">
-                <input class="btn btn-info btns" id="filter" type="button" value="Filter"/>
-                <input class="btn btn-primary btns" id="reset" type="button" value="Reset"/>
-                <input class="btn btn-warning btns" id="clear" type="button" value="Clear" />
-            </div>
-            <div class="row">
-
-                    <div class="dropdown">
-
-                        <button class="btn btn-success dropdown-toggle " type="button" id="ddbtn" data-toggle="dropdown">Select
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-                            <li id="20-26"><a href="#">20-26 September</a></li>
-                            <li id="27-3"><a href="#">27-3 September</a></li>
-                            <li id="4-10"><a href="#">4-10 October</a></li>
-                            <li id="11-17"><a href="#">11-17 October</a></li>
-                            <li id="18-24"><a href="#">18-24 October</a></li>
-                            <li id="25-31"><a href="#">25-31 October</a></li>
-                            <li id="1-7"><a href="#">1-7 November</a></li>
-                        </ul>
+                <div class="row text-center">
+                    <div class="col-md-4 text-center">
+                        <label>1</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label>0</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label>2</label>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <input  type="text" class="form-control" id="home_min" placeholder="min">
+                        <input  type="text" class="form-control" id="home_max" placeholder="max">
+                    </div>
+                    <div class="col-md-4">
+                        <input  type="text" class="form-control" id="tie_min" placeholder="min">
+                        <input  type="text" class="form-control" id="tie_max" placeholder="max">
+                    </div>
+                    <div class="col-md-4">
+                        <input  type="text" class="form-control" id="away_min" placeholder="min">
+                        <input  type="text" class="form-control" id="away_max" placeholder="max">
+                    </div>
+                </div>
+                <div class="row text-right">
+                    <div class="col-md-2">
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle " type="button" id="ddbtn" data-toggle="dropdown">S
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li id="20-26"><a href="#">20-26 September</a></li>
+                                <li id="27-3"><a href="#">27-3 September</a></li>
+                                <li id="4-10"><a href="#">4-10 October</a></li>
+                                <li id="11-17"><a href="#">11-17 October</a></li>
+                                <li id="18-24"><a href="#">18-24 October</a></li>
+                                <li id="25-31"><a href="#">25-31 October</a></li>
+                                <li id="1-7"><a href="#">1-7 November</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="btn btn-info btns" id="filter" type="button" value="Filter"/>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="btn btn-primary btns" id="reset" type="button" value="Reset"/>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="btn btn-warning btns" id="clear" type="button" value="Clear" />
                     </div>
 
-            </div>
+                </div>
 
+            </div>
         </form>
         <form class="form">
-            <div class="row">
-                Total Matches: <p id="p1"></p>
-                Total Ties: <p id="p2"></p>
-                Ties Percentage: <p id="p3"></p>
-            </div>
-            <div class="row">
-                Total Ties MS1 values: <div id="p4"></div>
+            <div class="col-md-12">
+                <div class="row">
+                    Total Matches: <p id="p1"></p>
+                    Total Ties: <p id="p2"></p>
+                    Ties Percentage: <p id="p3"></p>
+                </div>
             </div>
         </form>
     </div>

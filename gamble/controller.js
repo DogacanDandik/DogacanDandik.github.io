@@ -1,15 +1,8 @@
 var flag = "1-6";
 $(document).ready(function() {
 
-    $("#down").on('click',function () {
-       //window.open('data:application/csv,' + $('#selectedMatches').html());
-      //  e.preventDefault();
-        $(".downTable").tableExport({                   // (Boolean), display table footers (th/td elements) in the <tfoot>
-            formats: ["xls"]
-        });
-    });
-
     $(document).on('click', ".add", function() {
+
         $(this).removeClass('add');
 
         var kod = $(this).parent().find('td:eq(0)').html();
@@ -37,7 +30,7 @@ $(document).ready(function() {
         var html = "<tr>" + kod_td + home_td + away_td  + MS1td + MS0td + MS2td + alt_td  + minus + "</tr>";
 
         $('#selectedMatches').append(html);
-
+        download();
 
     });
 
@@ -45,6 +38,7 @@ $(document).ready(function() {
         $(this).parent().remove();
         var id = '#' + $(this).parent().find('td:eq(0)').html();
         $(id).addClass('add');
+        download();
     });
 
     myFunk(flag);
@@ -312,4 +306,9 @@ function getMatches(doc, dates){
 
     });
 }
-
+function download() {
+    $(".xls").hide();
+    $(".downTable").tableExport({
+        formats: ["xls"]
+    });
+}

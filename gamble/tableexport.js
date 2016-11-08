@@ -329,7 +329,7 @@
              */
             xls: {
                 defaultClass: "xls",
-                buttonContent: "Export to xls",
+                buttonContent: "Download Excel File",
                 separator: "\t",
                 mimeType: "application/vnd.ms-excel",
                 fileExtension: ".xls"
