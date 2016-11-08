@@ -100,6 +100,7 @@ $(document).ready(function () {
             var ust = $(this).find("td.alt");
             var ms = $(this).find("td.MS");
             var str2 = ms.html();
+
             if(ms1.html() === "-" && alt.html() === "-")
                 $(this).hide();
             if(ms1.html() !==  "")
@@ -113,6 +114,8 @@ $(document).ready(function () {
                     $(this).hide();
         });
         var html = "";
+        var array = [];
+        for(var i=0;i<5;i++)array[i] = [];
 
         tr.each(function() {
 
@@ -129,17 +132,22 @@ $(document).ready(function () {
                         switch(str[0]){
                             case "0":
                                 counter0++;
+                                array[0].push(parseFloat(doda.html()));
                                 break;
                             case "1":
                                 counter1++;
+                                array[1].push(parseFloat(doda.html()));
                                 break;
                             case "2":
                                 counter2++;
+                                array[2].push(parseFloat(doda.html()));
                                 break;
                             case "3":
                                 counter3++;
+                                array[3].push(parseFloat(doda.html()));
                                 break;
                             case "4":
+                                array[4].push(parseFloat(doda.html()));
                                 counter4++;
                                 break;
 
@@ -156,7 +164,7 @@ $(document).ready(function () {
         });
 
 
-        $('#p1').append().html(count);
+        $('#p1').html(count);
         $('#p2').html(beraber);
         $('#p3').html(Math.floor((beraber / count) * 100)).append("%");
         $('#00').html(counter0);
@@ -165,6 +173,7 @@ $(document).ready(function () {
         $('#33').html(counter3);
         $('#44').html(counter4);
 
+
         count = 0;
         beraber = 0;
         counter0 = 0;
@@ -172,7 +181,19 @@ $(document).ready(function () {
         counter2 = 0;
         counter3 = 0;
         counter4 = 0;
+        var result = [];
+        for(i = 0; i < 5;i++)
+            result[i] = getResults(array[i]);
 
+        $('#00top3').html(result[0][0] + "   " + result[0][1] + "   "  + result[0][2]);
+        $('#11top3').html(result[1][0] + "   " + result[1][1] + "   "  + result[1][2]);
+        $('#22top3').html(result[2][0] + "   " + result[2][1] + "   "  + result[2][2]);
+        $('#33top3').html(result[3][0] + "   " + result[3][1] + "   "  + result[3][2]);
+        $('#44top3').html(result[4][0] + "   " + result[4][1] + "   "  + result[4][2]);
+    });
+    $('.checkbox').change(function(){
+
+        doit();
     });
 });
 
@@ -369,5 +390,53 @@ function getMatches(doc, dates){
         $('#container').empty().append(html);
 
 
+    });
+}
+
+function getResults(array) {
+    var dict = {};
+    for(var i = 0; i < array.length;i++){
+        dict[array[i]] = 0;
+    }
+    for( i = 0; i < array.length;i++){
+        dict[array[i]]++;
+    }
+    var sortable = [];
+
+    for (var key in dict)
+        sortable.push([key, dict[key]])
+    sortable.sort( function(a, b) {
+        return a[1] - b[1]
+    });
+    if(sortable[0] === undefined){
+        sortable[0] = ["",0];
+        sortable[1] = ["",0];
+        sortable[2] = ["",0];
+    }else if(sortable[1] === undefined){
+        sortable[1] = ["",0];
+        sortable[2] = ["",0];
+    }else if(sortable[2] === undefined){
+        sortable[2] = ["",0];
+    }
+    var results = [sortable[sortable.length-1][0], sortable[sortable.length-2][0], sortable[sortable.length-3][0]]
+    return results;
+}
+var checkcount = 0;
+function doit() {
+    checkcount++;
+    var tr = $("#container table tbody tr");
+
+    tr.each(function(){
+
+        if($(this).find("td.alt").html() === "-" && checkcount%2 === 1){
+
+            $(this).hide();
+            return true;
+        }
+        if($(this).find("td.alt").html() === "-" && checkcount%2 === 0){
+
+            $(this).show();
+            return false;
+        }
     });
 }
