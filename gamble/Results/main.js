@@ -59,6 +59,12 @@ $(document).ready(function () {
     });
 
     var count=0;
+    var counter0 = 0;
+    var counter1 = 0;
+    var counter2 = 0;
+    var counter3 = 0;
+    var counter4 = 0;
+
     var beraber=0;
     $('#filter').on('click',function () {
 
@@ -107,7 +113,7 @@ $(document).ready(function () {
                     $(this).hide();
         });
         var html = "";
-        var max="";
+
         tr.each(function() {
 
             var ms = $(this).find("td.MS");
@@ -120,6 +126,24 @@ $(document).ready(function () {
                     var str = ms.html();
 
                     if (str[0] === str[2]){
+                        switch(str[0]){
+                            case "0":
+                                counter0++;
+                                break;
+                            case "1":
+                                counter1++;
+                                break;
+                            case "2":
+                                counter2++;
+                                break;
+                            case "3":
+                                counter3++;
+                                break;
+                            case "4":
+                                counter4++;
+                                break;
+
+                        }
 
                         html += doda.html();
                         html += "<br/>";
@@ -132,12 +156,22 @@ $(document).ready(function () {
         });
 
 
-        $('#p1').html(count);
+        $('#p1').append().html(count);
         $('#p2').html(beraber);
         $('#p3').html(Math.floor((beraber / count) * 100)).append("%");
+        $('#00').html(counter0);
+        $('#11').html(counter1);
+        $('#22').html(counter2);
+        $('#33').html(counter3);
+        $('#44').html(counter4);
 
         count = 0;
         beraber = 0;
+        counter0 = 0;
+        counter1 = 0;
+        counter2 = 0;
+        counter3 = 0;
+        counter4 = 0;
 
     });
 });
