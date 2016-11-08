@@ -46,10 +46,16 @@ $(document).ready(function () {
 
         $('#alt_min').val('');
         $('#alt_max').val('');
+        $('#ust_min').val('');
+        $('#ust_max').val('');
         $('#home_min').val('');
         $('#home_max').val('');
+        $('#tie_min').val('');
+        $('#tie_max').val('');
         $('#away_min').val('');
         $('#away_max').val('');
+        $('#ms_home').val('');
+        $('#ms_away').val('');
     });
 
     var count=0;
@@ -58,14 +64,24 @@ $(document).ready(function () {
 
         var alt_min = $('#alt_min').val();
         var alt_max = $('#alt_max').val();
+        var ust_min = $('#ust_min').val();
+        var ust_max = $('#ust_max').val();
         var home_min = $('#home_min').val();
         var home_max = $('#home_max').val();
+        var tie_min = $('#tie_min').val();
+        var tie_max = $('#tie_max').val();
         var away_min = $('#away_min').val();
         var away_max = $('#away_max').val();
+        var ms_home = $('#ms_home').val();
+        var ms_away = $('#ms_away').val();
         if (alt_min.length === 0 )alt_min = 0.1;
         if (alt_max.length === 0 )alt_max = 10;
+        if (ust_min.length === 0 )ust_min = 0.1;
+        if (ust_max.length === 0 )ust_max = 10;
         if (home_min.length === 0)home_min = 0.1;
         if (home_max.length === 0)home_max = 10;
+        if (tie_min.length === 0)tie_min = 0.1;
+        if (tie_max.length === 0)tie_max = 10;
         if (away_min.length === 0)away_min = 0.1;
         if (away_max.length === 0)away_max = 10;
         var tr = $("#container table tbody tr");
@@ -76,15 +92,18 @@ $(document).ready(function () {
             var ms2 = $(this).find("td.MS2");
             var alt = $(this).find("td.alt");
             var ust = $(this).find("td.alt");
-
-
+            var ms = $(this).find("td.MS");
+            var str2 = ms.html();
             if(ms1.html() === "-" && alt.html() === "-")
                 $(this).hide();
-            if(ms1.html() !== "-")
-                if(ms1.html() < home_min || ms1.html() > home_max || ms2.html() < away_min || ms2.html() > away_max)
+            if(ms1.html() !==  "")
+                if(parseFloat(ms1.html()) < parseFloat(home_min) || parseFloat(ms1.html()) > parseFloat(home_max) || parseFloat(ms0.html()) < parseFloat(tie_min) || parseFloat(ms0.html()) > parseFloat(tie_max) || parseFloat(ms2.html()) < parseFloat(away_min) || parseFloat(ms2.html()) > parseFloat(away_max))
                     $(this).hide();
-            if(alt.html() !== "-")
-                if(alt.html() < alt_min || alt.html() > alt_max)
+            if(alt.html() !== "")
+                if(parseFloat(alt.html()) < parseFloat(alt_min) || parseFloat(alt.html()) > parseFloat(alt_max) || parseFloat(ust.html()) < parseFloat(ust_min) || parseFloat(ust.html()) > parseFloat(ust_max))
+                    $(this).hide();
+            if(str2 !== undefined && parseInt(ms_home) < 10 && parseInt(ms_home) >= 0 && parseInt(ms_away) < 10 && parseInt(ms_away) >= 0)
+                if(parseInt(str2[0]) !== parseInt(ms_home) || parseInt(str2[2]) !== parseInt(ms_away))
                     $(this).hide();
         });
         var html = "";
@@ -96,14 +115,11 @@ $(document).ready(function () {
             if($(this).is(":visible")){
                 var doda = $(this).find("td.MS1");
 
-
                 if(ms.html() !== undefined){
                     count++;
                     var str = ms.html();
 
                     if (str[0] === str[2]){
-                        if(max < doda.html())
-                            max = doda.html();
 
                         html += doda.html();
                         html += "<br/>";
