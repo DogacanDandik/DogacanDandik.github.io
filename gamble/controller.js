@@ -15,6 +15,8 @@ $(document).ready(function() {
         var alt = $(this).parent().find('td:eq(7)').html();
         var ust = $(this).parent().find('td:eq(8)').html();
         var link = $(this).parent().find('td:eq(9)').html();
+        if(ust[ust.length-1] === "\n")
+            ust = ust.slice(0, -1);
         $(this).attr('id', kod);
         var kod_td= "<td>" + kod + "</td>";
         var home_td= "<td>" + home + "</td>";
@@ -25,10 +27,11 @@ $(document).ready(function() {
         var alt_td= "<td class='hid'>" + alt + "</td>";
         var ust_td= "<td class='hid'>" + ust + "</td>";
 
-
         var minus = "<td class='minus'>" + "<span class='glyphicon glyphicon-minus-sign button' aria-hidden='true'></span>" + "</td>";
-        var html = "<tr>" + kod_td + home_td + away_td  + MS1td + MS0td + MS2td + alt_td  + minus + "</tr>";
-
+        var html = "<tr>" + kod_td + home_td + away_td  + MS1td + MS0td + MS2td + alt_td  + ust_td + minus + "</tr>";
+        for(var i=0; i < html.length; i++) {
+            html = html.replace(".", ",");
+        }
         $('#selectedMatches').append(html);
         download();
 
