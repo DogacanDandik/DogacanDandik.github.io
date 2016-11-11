@@ -2,9 +2,11 @@ var flag="25-31";
 
 $(document).ready(function () {
     $('#reset').on('click',function () {
+
         if(flag !== "")
             myFunk(flag);
-        $('#container').empty();
+
+      //  $('#container').empty();
     });
     $('#20-26').on('click', function () {
 
@@ -112,6 +114,8 @@ $(document).ready(function () {
             if(str2 !== undefined && parseInt(ms_home) < 10 && parseInt(ms_home) >= 0 && parseInt(ms_away) < 10 && parseInt(ms_away) >= 0)
                 if(parseInt(str2[0]) !== parseInt(ms_home) || parseInt(str2[2]) !== parseInt(ms_away))
                     $(this).hide();
+
+
         });
         var html = "";
         var array = [];
@@ -163,7 +167,7 @@ $(document).ready(function () {
 
         });
 
-
+        doit();
         $('#p1').html(count);
         $('#p2').html(beraber);
         $('#p3').html(Math.floor((beraber / count) * 100)).append("%");
@@ -191,10 +195,8 @@ $(document).ready(function () {
         $('#33top3').html(result[3][0] + "   " + result[3][1] + "   "  + result[3][2]);
         $('#44top3').html(result[4][0] + "   " + result[4][1] + "   "  + result[4][2]);
     });
-    $('.checkbox').change(function(){
+    $( "input[type=checkbox]" ).change( "click", doit );
 
-        doit();
-    });
 });
 
 function myFunk(docName) {
@@ -388,7 +390,7 @@ function getMatches(doc, dates){
 
 
         $('#container').empty().append(html);
-
+        doit()();
 
     });
 }
@@ -421,22 +423,16 @@ function getResults(array) {
     var results = [sortable[sortable.length-1][0], sortable[sortable.length-2][0], sortable[sortable.length-3][0]]
     return results;
 }
-var checkcount = 0;
 function doit() {
-    checkcount++;
+
     var tr = $("#container table tbody tr");
 
     tr.each(function(){
 
-        if($(this).find("td.alt").html() === "-" && checkcount%2 === 1){
-
+    //    if($(this).find("td.alt").html() === "-" && $( "input:checked" ).length === 0)
+      //      $(this).show();
+         if($(this).find("td.alt").html() === "-" && $( "input:checked" ).length === 1)
             $(this).hide();
-            return true;
-        }
-        if($(this).find("td.alt").html() === "-" && checkcount%2 === 0){
 
-            $(this).show();
-            return false;
-        }
     });
 }
