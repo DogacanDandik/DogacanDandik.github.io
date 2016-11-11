@@ -1,4 +1,4 @@
-var flag = "1-6";
+var flag = "11-15";
 $(document).ready(function() {
 
     $(document).on('click', ".add", function() {
@@ -65,6 +65,11 @@ $(document).ready(function() {
     $('#8-13').on('click', function () {
         $('#dropdownMenu1').html("8-13");
         flag = "8-13";
+        myFunk(flag);
+    });
+    $('#11-15').on('click', function () {
+        $('#dropdownMenu1').html("11-15");
+        flag = "11-15";
         myFunk(flag);
     });
     $('#clear').on('click',function () {
@@ -195,8 +200,19 @@ function myFunk(docName) {
         var date6 = ["13.11.2016 Sunday", "107"];
         var date7 = ["14.11.2016 Monday", ""];
 
-    }
+    }else if(docName === "11-15"){
 
+        var val = document.getElementById('11-15').id;
+
+        var date1 = ["15.11.2016 Tuesday", "257"];
+        var date2 = ["09.11.2016 Wednesday", ""];
+        var date3 = ["10.11.2016 Thursday", ""];
+        var date4 = ["11.11.2016 Friday", "479"];
+        var date5 = ["12.11.2016 Saturday", "130"];
+        var date6 = ["13.11.2016 Sunday", "219"];
+        var date7 = ["14.11.2016 Monday", "252"];
+
+    }
     var dates = [date1, date2, date3, date4, date5, date6, date7];
 
     getMatches('CsvFiles/CsvNow/' +  val + '.csv', dates);
