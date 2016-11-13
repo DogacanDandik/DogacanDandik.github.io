@@ -1,4 +1,4 @@
-var flag="25-31";
+var flag="8-13";
 
 $(document).ready(function () {
     $('#reset').on('click',function () {
@@ -42,6 +42,12 @@ $(document).ready(function () {
     $('#1-7').on('click', function () {
         $('#doc').html($('#1-7').html());
         flag = "1-7";
+        myFunk(flag);
+    });
+    $('#8-13').on('click', function () {
+
+        $('#doc').html($('#8-13').html());
+        flag = "8-13";
         myFunk(flag);
     });
     $('#clear').on('click',function () {
@@ -200,6 +206,20 @@ $(document).ready(function () {
 });
 
 function myFunk(docName) {
+
+    if(docName === "8-13"){
+
+        var val = document.getElementById('8-13').id;
+
+        var date1 = ["08.11.2016 Tuesday", "401"];
+        var date2 = ["09.11.2016 Wednesday", "426"];
+        var date3 = ["10.11.2016 Thursday", "468"];
+        var date4 = ["11.11.2016 Friday", "101"];
+        var date5 = ["12.11.2016 Saturday", "104"];
+        var date6 = ["13.11.2016 Sunday", "107"];
+        var date7 = ["14.11.2016 Monday", ""];
+
+    }else
     if(docName === "1-7"){
 
         var val = document.getElementById('1-7').id;
