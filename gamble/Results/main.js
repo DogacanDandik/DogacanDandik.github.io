@@ -449,8 +449,8 @@ function doit() {
 
     tr.each(function(){
 
-    //    if($(this).find("td.alt").html() === "-" && $( "input:checked" ).length === 0)
-      //      $(this).show();
+       // if($(this).find("td.alt").html() === "-" && $( "input:checked" ).length === 0)
+         //  $(this).show();
          if($(this).find("td.alt").html() === "-" && $( "input:checked" ).length === 1)
             $(this).hide();
 

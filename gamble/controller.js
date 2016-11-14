@@ -1,6 +1,6 @@
-var flag = "11-15";
+var flag = "15-21";
 $(document).ready(function() {
-
+    $( "input[type=checkbox]" ).change( "click", doit );
     $(document).on('click', ".add", function() {
 
         $(this).removeClass('add');
@@ -75,6 +75,11 @@ $(document).ready(function() {
         flag = "11-15";
         myFunk(flag);
     });
+    $('#15-21').on('click', function () {
+        $('#dropdownMenu1').html("15-21");
+        flag = "15-21";
+        myFunk(flag);
+    });
     $('#clear').on('click',function () {
 
         $('#alt_min').val('');
@@ -138,6 +143,7 @@ $(document).ready(function() {
                     $(this).hide();
 
         });
+        doit();
 
     });
 
@@ -214,6 +220,18 @@ function myFunk(docName) {
         var date5 = ["12.11.2016 Saturday", "130"];
         var date6 = ["13.11.2016 Sunday", "219"];
         var date7 = ["14.11.2016 Monday", "252"];
+
+    }else if(docName === "15-21"){
+
+        var val = document.getElementById('15-21').id;
+
+        var date1 = ["15.11.2016 Tuesday", "257"];
+        var date2 = ["16.11.2016 Wednesday", "443"];
+        var date3 = ["17.11.2016 Thursday", "444"];
+        var date4 = ["18.11.2016 Friday", "471"];
+        var date5 = ["19.11.2016 Saturday", "106"];
+        var date6 = ["20.11.2016 Sunday", "136"];
+        var date7 = ["21.11.2016 Monday", "156"];
 
     }
     var dates = [date1, date2, date3, date4, date5, date6, date7];
@@ -321,7 +339,7 @@ function getMatches(doc, dates){
 
 
         $('#container').empty().append(html);
-
+        doit()();
 
     });
 }
@@ -329,5 +347,18 @@ function download() {
     $(".xls").hide();
     $(".downTable").tableExport({
         formats: ["xls"]
+    });
+}
+function doit() {
+
+    var tr = $("#container table tbody tr");
+
+    tr.each(function(){
+
+        //    if($(this).find("td.alt").html() === "-" && $( "input:checked" ).length === 0)
+        //      $(this).show();
+        if($(this).find("td.alt").html() === "" && $( "input:checked" ).length === 1)
+            $(this).hide();
+
     });
 }
