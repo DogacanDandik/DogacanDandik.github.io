@@ -85,12 +85,25 @@ $(document).ready(function() {
         flag = "15-21Nov";
         myFunk(flag);
     });
+    $('#18-22Nov').on('click', function () {
+        $('#dropdownMenu1').html("18-22Nov");
+        flag = "18-22Nov";
+        myFunk(flag);
+    });
     $('#clear').on('click',function () {
 
         $('#alt_min').val('');
         $('#alt_max').val('');
         $('#ust_min').val('');
         $('#ust_max').val('');
+        $('#alt1_min').val('');
+        $('#alt1_max').val('');
+        $('#ust1_min').val('');
+        $('#ust1_max').val('');
+        $('#alt3_min').val('');
+        $('#alt3_max').val('');
+        $('#ust3_min').val('');
+        $('#ust3_max').val('');
         $('#home_min').val('');
         $('#home_max').val('');
         $('#tie_min').val('');
@@ -98,7 +111,6 @@ $(document).ready(function() {
         $('#away_min').val('');
         $('#away_max').val('');
     });
-
     $('#reset').on('click',function () {
         $('#dropdownMenu1').html("Select");
         if(flag !== 0)
@@ -112,6 +124,14 @@ $(document).ready(function() {
         var alt_max = $('#alt_max').val();
         var ust_min = $('#ust_min').val();
         var ust_max = $('#ust_max').val();
+        var alt1_min = $('#alt1_min').val();
+        var alt1_max = $('#alt1_max').val();
+        var ust1_min = $('#ust1_min').val();
+        var ust1_max = $('#ust1_max').val();
+        var alt3_min = $('#alt3_min').val();
+        var alt3_max = $('#alt3_max').val();
+        var ust3_min = $('#ust3_min').val();
+        var ust3_max = $('#ust3_max').val();
         var home_min = $('#home_min').val();
         var home_max = $('#home_max').val();
         var tie_min = $('#tie_min').val();
@@ -123,6 +143,14 @@ $(document).ready(function() {
         if (alt_max.length === 0 )alt_max = 100;
         if (ust_min.length === 0 )ust_min = 0.1;
         if (ust_max.length === 0 )ust_max = 100;
+        if (alt1_min.length === 0 )alt1_min = 0.1;
+        if (alt1_max.length === 0 )alt1_max = 100;
+        if (ust1_min.length === 0 )ust1_min = 0.1;
+        if (ust1_max.length === 0 )ust1_max = 100;
+        if (alt3_min.length === 0 )alt3_min = 0.1;
+        if (alt3_max.length === 0 )alt3_max = 100;
+        if (ust3_min.length === 0 )ust3_min = 0.1;
+        if (ust3_max.length === 0 )ust3_max = 100;
         if (home_min.length === 0)home_min = 0.1;
         if (home_max.length === 0)home_max = 100;
         if (tie_min.length === 0)tie_min = 0.1;
@@ -137,7 +165,11 @@ $(document).ready(function() {
             var ms0 = $(this).find("td.MS0");
             var ms2 = $(this).find("td.MS2");
             var alt = $(this).find("td.alt");
+            var alt1 = $(this).find("td.alt1");
+            var alt3 = $(this).find("td.alt3");
             var ust = $(this).find("td.ust");
+            var ust1 = $(this).find("td.ust1");
+            var ust3 = $(this).find("td.ust3");
             if(ms1.html() ===  "" &&  alt.html() === "")
                 $(this).hide();
             if(ms1.html() !==  "")
@@ -145,6 +177,12 @@ $(document).ready(function() {
                     $(this).hide();
             if(alt.html() !== "")
                 if(parseFloat(alt.html()) < parseFloat(alt_min) || parseFloat(alt.html()) > parseFloat(alt_max) || parseFloat(ust.html()) < parseFloat(ust_min) || parseFloat(ust.html()) > parseFloat(ust_max))
+                    $(this).hide();
+            if(alt1.html() !== "")
+                if(parseFloat(alt1.html()) < parseFloat(alt1_min) || parseFloat(alt1.html()) > parseFloat(alt1_max) || parseFloat(ust1.html()) < parseFloat(ust1_min) || parseFloat(ust1.html()) > parseFloat(ust1_max))
+                    $(this).hide();
+            if(alt3.html() !== "")
+                if(parseFloat(alt3.html()) < parseFloat(alt3_min) || parseFloat(alt3.html()) > parseFloat(alt3_max) || parseFloat(ust3.html()) < parseFloat(ust3_min) || parseFloat(ust3.html()) > parseFloat(ust3_max))
                     $(this).hide();
 
         });
@@ -251,6 +289,19 @@ function myFunk(docName) {
         var date5 = ["19.11.2016 Saturday", "106"];
         var date6 = ["20.11.2016 Sunday", "136"];
         var date7 = ["21.11.2016 Monday", "156"];
+        flag= true;
+    }
+    else if(docName === "18-22Nov"){
+
+        var val = document.getElementById('18-22Nov').id;
+
+        var date1 = ["22.11.2016 Tuesday", "519"];
+        var date2 = ["16.11.2016 Wednesday", ""];
+        var date3 = ["17.11.2016 Thursday", ""];
+        var date4 = ["18.11.2016 Friday", "161"];
+        var date5 = ["19.11.2016 Saturday", "211"];
+        var date6 = ["20.11.2016 Sunday", "388"];
+        var date7 = ["21.11.2016 Monday", "495"];
         flag= true;
     }
     var dates = [date1, date2, date3, date4, date5, date6, date7];
@@ -361,7 +412,7 @@ function getMatches(doc, dates){
 
 
         $('#container').empty().append(html);
-        doit()();
+        doit();
 
     });
 }
@@ -448,17 +499,17 @@ function getMatchesNew(doc, dates){
 
             html += "<td class='MS2'>" + columns[6] + "</td>";
 
-            html += "<td class='alt1.5'>" + columns[7] + "</td>";
+            html += "<td class='alt1'>" + columns[7] + "</td>";
 
-            html += "<td class='ust1.5'>" + columns[8] + "</td>";
+            html += "<td class='ust1'>" + columns[8] + "</td>";
 
             html += "<td class='alt'>" + columns[9] + "</td>";
 
             html += "<td class='ust'>" + columns[10] + "</td>";
 
-            html += "<td class='alt3.5'>" + columns[11] + "</td>";
+            html += "<td class='alt3'>" + columns[11] + "</td>";
 
-            html += "<td class='ust3.5'>" + columns[12] + "</td>";
+            html += "<td class='ust3'>" + columns[12] + "</td>";
 
 
 
