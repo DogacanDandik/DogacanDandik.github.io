@@ -95,6 +95,11 @@ $(document).ready(function() {
         flag = "22-28Nov";
         myFunk(flag);
     });
+    $('#25-28Nov').on('click', function () {
+        $('#dropdownMenu1').html("25-28Nov");
+        flag = "25-28Nov";
+        myFunk(flag);
+    });
     $('#clear').on('click',function () {
 
         $('#alt_min').val('');
@@ -321,6 +326,19 @@ function myFunk(docName) {
         var date7 = ["28.11.2016 Monday", "155"];
         flag= true;
     }
+    else if(docName === "25-28Nov"){
+
+        var val = document.getElementById('25-28Nov').id;
+
+        var date1 = ["29.11.2016 Tuesday", "528"];
+        var date2 = ["23.11.2016 Wednesday", ""];
+        var date3 = ["24.11.2016 Thursday", ""];
+        var date4 = ["25.11.2016 Friday", "160"];
+        var date5 = ["26.11.2016 Saturday", "206"];
+        var date6 = ["27.11.2016 Sunday", "363"];
+        var date7 = ["28.11.2016 Monday", "488"];
+        flag= true;
+    }
     var dates = [date1, date2, date3, date4, date5, date6, date7];
 
     if(flag)
@@ -483,19 +501,19 @@ function getMatchesNew(doc, dates){
 
 
             if (columns[0] === dates[0][1])
-                html += "<tr><td class='date'>" + dates[0][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[0][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[1][1])
-                html += "<tr><td class='date'>" + dates[1][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[1][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[2][1])
-                html += "<tr><td class='date'>" + dates[2][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[2][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[3][1])
-                html += "<tr><td class='date'>" + dates[3][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[3][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[4][1])
-                html += "<tr><td class='date'>" + dates[4][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[4][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[5][1])
-                html += "<tr><td class='date'>" + dates[5][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[5][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
             if (columns[0] === dates[6][1])
-                html += "<tr><td class='date'>" + dates[6][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+                html += "<tr><td class='date'>" + dates[6][0] + "<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
 
 
 
