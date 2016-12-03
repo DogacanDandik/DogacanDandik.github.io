@@ -368,7 +368,7 @@ function myFunk(docName) {
 
         var date1 = ["6.12.2016 Tuesday", "452"];
         var date2 = ["30.11.2016 Wednesday", ""];
-        var date3 = ["1.12.2016 Thursday", ""];
+        var date3 = ["1.12.2016 Thursday", "2"];
         var date4 = ["2.12.2016 Friday", "552"];
         var date5 = ["3.12.2016 Saturday", "188"];
         var date6 = ["4.12.2016 Sunday", "312"];
