@@ -1,4 +1,4 @@
-var flag="21-27Nov";
+var flag="28-4Dec";
 
 $(document).ready(function () {
     $('#reset').on('click',function () {
@@ -61,6 +61,12 @@ $(document).ready(function () {
 
         $('#doc').html($('#21-27Nov').html());
         flag = "21-27Nov";
+        myFunk(flag);
+    });
+    $('#28-4Dec').on('click', function () {
+
+        $('#doc').html($('#28-4Dec').html());
+        flag = "28-4Dec";
         myFunk(flag);
     });
     $('#clear').on('click',function () {
@@ -220,6 +226,19 @@ $(document).ready(function () {
 
 function myFunk(docName) {
 
+    if(docName === "28-4Dec"){
+
+        var val = document.getElementById('28-4Dec').id;
+
+        var date1 = ["28.11.2016 Tuesday", "155"];
+        var date2 = ["29.11.2016 Wednesday", "401"];
+        var date3 = ["30.11.2016 Thursday", "455"];
+        var date4 = ["01.12.2016 Friday", "512"];
+        var date5 = ["02.12.2016 Saturday", "102"];
+        var date6 = ["03.12.2016 Sunday", "104"];
+        var date7 = ["04.12.2016 Monday", "124"];
+
+    }else
     if(docName === "21-27Nov"){
 
         var val = document.getElementById('21-27Nov').id;
