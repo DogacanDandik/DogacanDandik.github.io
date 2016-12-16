@@ -1,4 +1,4 @@
-var flag = "13-19Dec";
+var flag = "16-19Dec";
 $(document).ready(function() {
     $( "input[type=checkbox]" ).change( "click", doit );
     $(document).on('click', ".add", function() {
@@ -115,9 +115,14 @@ $(document).ready(function() {
         flag = "6-12Dec";
         myFunk(flag);
     });
-    $('#3-19Dec').on('click', function () {
+    $('#13-19Dec').on('click', function () {
         $('#dropdownMenu1').html("13-19Dec");
         flag = "13-19Dec";
+        myFunk(flag);
+    });
+    $('#16-19Dec').on('click', function () {
+        $('#dropdownMenu1').html("16-19Dec");
+        flag = "16-19Dec";
         myFunk(flag);
     });
     $('#clear').on('click',function () {
@@ -408,6 +413,18 @@ function myFunk(docName) {
         var date5 = ["17.12.2016 Saturday", "489"];
         var date6 = ["18.12.2016 Sunday", "410"];
         var date7 = ["19.12.2016 Monday", "430"];
+        flag= true;
+    } else if(docName === "16-19Dec"){
+
+        var val = document.getElementById('16-19Dec').id;
+
+        var date1 = ["20.12.2016 Tuesday", "376"];
+        var date2 = ["14.12.2016 Wednesday", ""];
+        var date3 = ["15.12.2016 Thursday", ""];
+        var date4 = ["16.12.2016 Friday", "101"];
+        var date5 = ["17.12.2016 Saturday", "132"];
+        var date6 = ["18.12.2016 Sunday", "272"];
+        var date7 = ["19.12.2016 Monday", "356"];
         flag= true;
     }
     var dates = [date1, date2, date3, date4, date5, date6, date7];
